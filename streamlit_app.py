@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
-import os
+import requests
+from io import BytesIO
 
 # Title of the application
 st.title("Screenshot Sharing Application")
@@ -8,17 +9,14 @@ st.title("Screenshot Sharing Application")
 # Instructions
 st.write("Upload a screenshot from your local computer to share it.")
 
-# Path to the predefined image "AP prepceive"
-# Update the path to point to your desktop
-image_path = "C:/Users/Buddy/Desktop/AP prepceive.png"
+# Google Drive direct download link
+image_url = "https://drive.google.com/uc?export=download&id=1H-DsYQ7wgtUkyGY72u3oFrQV0Jlr_IHu"
 
-if os.path.exists(image_path):
-    # Display the predefined image "AP prepceive"
-    st.write("Here is the predefined image 'AP prepceive':")
-    ap_prepceive_image = Image.open(image_path)  # Ensure the image is in the same directory as this script
-    st.image(ap_prepceive_image, caption='AP prepceive', use_column_width=True)
-else:
-    st.write("The predefined image 'AP prepceive' is not found. Please check the file path.")
+# Display the predefined image "AP prepceive"
+st.write("Here is the predefined image 'AP prepceive':")
+response = requests.get(image_url)
+ap_prepceive_image = Image.open(BytesIO(response.content))
+st.image(ap_prepceive_image, caption='AP prepceive', use_column_width=True)
 
 # File uploader for the screenshot
 uploaded_file = st.file_uploader("Choose a screenshot file", type=["png", "jpg", "jpeg"])
