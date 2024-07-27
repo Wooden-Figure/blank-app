@@ -11,18 +11,21 @@ st.write("This is the CVG 110 labor plan. Look at the images below to find your 
 
 # List of Google Drive direct download links for the images
 image_urls = [
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_1",
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_2",
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_3",
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_4",
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_5",
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_6",
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_7",
-    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_8"
+    "https://drive.google.com/uc?export=download&id=1H-DsYQ7wgtUkyGY72u3oFrQV0Jlr_IHu",
+    '''"https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_2",  # Replace with actual file ID
+    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_3",  # Replace with actual file ID
+    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_4",  # Replace with actual file ID
+    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_5",  # Replace with actual file ID
+    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_6",  # Replace with actual file ID
+    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_7",  # Replace with actual file ID
+    "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_8"   # Replace with actual file ID'''
 ]
 
 # Display images from Google Drive links
 for idx, image_url in enumerate(image_urls):
+    if "YOUR_FILE_ID" in image_url:
+        continue  # Skip placeholders
+
     response = requests.get(image_url)
     image = Image.open(BytesIO(response.content))
     st.image(image, caption=f'Station {idx + 1}', use_column_width=True)
@@ -34,4 +37,4 @@ for idx, image_url in enumerate(image_urls):
     )
 
 # Note
-st.write("Note: Only PNG, JPG, and JPEG files are supported.")
+st.
