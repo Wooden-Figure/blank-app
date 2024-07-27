@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-import io
+import os
 
 # Title of the application
 st.title("Screenshot Sharing Application")
@@ -8,10 +8,17 @@ st.title("Screenshot Sharing Application")
 # Instructions
 st.write("Upload a screenshot from your local computer to share it.")
 
-# Display the predefined image "AP prepceive"
-st.write("Here is the predefined image 'AP prepceive':")
-ap_prepceive_image = Image.open("AP prepceive.png")  # Make sure the image is in the same directory as this script
-st.image(ap_prepceive_image, caption='AP prepceive', use_column_width=True)
+# Path to the predefined image "AP prepceive"
+# Update the path to point to your desktop
+image_path = "C:/Users/YourUsername/Desktop/AP prepceive.png"
+
+if os.path.exists(image_path):
+    # Display the predefined image "AP prepceive"
+    st.write("Here is the predefined image 'AP prepceive':")
+    ap_prepceive_image = Image.open(image_path)  # Ensure the image is in the same directory as this script
+    st.image(ap_prepceive_image, caption='AP prepceive', use_column_width=True)
+else:
+    st.write("The predefined image 'AP prepceive' is not found. Please check the file path.")
 
 # File uploader for the screenshot
 uploaded_file = st.file_uploader("Choose a screenshot file", type=["png", "jpg", "jpeg"])
