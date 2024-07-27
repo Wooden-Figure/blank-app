@@ -4,10 +4,10 @@ import requests
 from io import BytesIO
 
 # Title of the application
-st.title("Screenshot Sharing Application")
+st.title("CVG 110 Labor Plan")
 
 # Instructions
-st.write("Upload a screenshot from your local computer to share it.")
+st.write("This is the CVG 110 labor plan. You can upload a screenshot from your local computer to share it.")
 
 # Google Drive direct download link
 image_url = "https://drive.google.com/uc?export=download&id=1H-DsYQ7wgtUkyGY72u3oFrQV0Jlr_IHu"
