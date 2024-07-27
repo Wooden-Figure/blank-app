@@ -12,6 +12,8 @@ st.write("This is the CVG 110 labor plan. Look at the images below to find your 
 # List of Google Drive direct download links for the images
 image_urls = [
     "https://drive.google.com/uc?export=download&id=1H-DsYQ7wgtUkyGY72u3oFrQV0Jlr_IHu",
+    "https://drive.google.com/file/d/1-0wvCDSPuOS4FGVdpkhfVG8jpQ7W4XE3/view?usp=drive_link",
+    "https://drive.google.com/file/d/1H-DsYQ7wgtUkyGY72u3oFrQV0Jlr_IHu/view?usp=drive_link",
     # Add more URLs here as needed
 ]
 
