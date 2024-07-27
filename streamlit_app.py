@@ -12,13 +12,11 @@ st.write("This is the CVG 110 labor plan. Look at the images below to find your 
 # List of Google Drive direct download links for the images
 image_urls = [
     "https://drive.google.com/uc?export=download&id=1H-DsYQ7wgtUkyGY72u3oFrQV0Jlr_IHu",
+    # Add more URLs here as needed
 ]
 
 # Display images from Google Drive links
 for idx, image_url in enumerate(image_urls):
-    if "YOUR_FILE_ID" in image_url:
-        continue  # Skip placeholders
-
     response = requests.get(image_url)
     image = Image.open(BytesIO(response.content))
     st.image(image, caption=f'Station {idx + 1}', use_column_width=True)
@@ -30,4 +28,4 @@ for idx, image_url in enumerate(image_urls):
     )
 
 # Note
-st.
+st.write("Note: Only PNG, JPG, and JPEG files are supported.")
