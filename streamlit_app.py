@@ -10,7 +10,7 @@ st.write("Upload a screenshot from your local computer to share it.")
 
 # Path to the predefined image "AP prepceive"
 # Update the path to point to your desktop
-image_path = "C:/Users/YourUsername/Desktop/AP prepceive.png"
+image_path = "C:/Users/buddy/Desktop/AP prepceive.png"
 
 if os.path.exists(image_path):
     # Display the predefined image "AP prepceive"
